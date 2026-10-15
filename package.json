@@ -1,0 +1,10 @@
+{
+  "name": "sneaker-price-alert-bot",
+  "version": "1.0.0",
+  "description": "Discord & Telegram alerts when a sneaker's StockX price drops below your target",
+  "main": "src/bot.js",
+  "scripts": { "start": "node src/bot.js", "check": "node src/bot.js --once" },
+  "engines": { "node": ">=18" },
+  "keywords": ["stockx", "sneakers", "price-alert", "discord-bot", "telegram-bot", "sneaker-bot"],
+  "license": "MIT"
+}
