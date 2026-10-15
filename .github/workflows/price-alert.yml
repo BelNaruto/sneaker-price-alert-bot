@@ -19,7 +19,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node src/bot.js --once
+      - name: Check prices
+        run: |
+          if [ -z "$RAPIDAPI_KEY" ]; then echo "RAPIDAPI_KEY secret not set - skipping."; exit 0; fi
+          node src/bot.js --once
         env:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
